@@ -1,0 +1,22 @@
+# robots.txt for Platinum Finish Group LLC
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /.env
+Disallow: /node_modules
+
+# Crawl-delay in seconds
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://platinumfinishg.com/sitemap.xml
+
+# Google Search Console
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+

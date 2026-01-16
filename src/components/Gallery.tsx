@@ -12,6 +12,7 @@ const categories = [
 ];
 
 export default function Gallery() {
+
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
@@ -102,16 +103,20 @@ export default function Gallery() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Our Work</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Browse our portfolio of completed projects and see the quality of our craftsmanship.
+            Browse our portfolio of completed home renovation and repair projects showcasing the quality and expertise
+            of our handyman services in South Florida.
           </p>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12" role="tablist" aria-label="Gallery category filters">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => handleCategoryChange(category.id)}
+              role="tab"
+              aria-selected={selectedCategory === category.id}
+              aria-label={`Filter gallery by ${category.label}`}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 selectedCategory === category.id
                   ? 'bg-red-600 text-white'
@@ -140,7 +145,7 @@ export default function Gallery() {
             >
               <img
                 src={item.image}
-                alt="Gallery"
+                alt={item.description}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 style={{ WebkitFilterForcedColorAdjust: 'none' } as React.CSSProperties}
               />
@@ -211,7 +216,7 @@ export default function Gallery() {
             </button>
             <img
               src={galleryItems.find(item => item.id === selectedImage)?.image}
-              alt="Gallery"
+              alt={galleryItems.find(item => item.id === selectedImage)?.description || 'Gallery image'}
               className="w-full h-auto rounded-lg max-h-[80vh] object-contain"
             />
           </div>

@@ -1,5 +1,6 @@
 import { AlertCircle, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import config from "../config/env.ts";
 
 interface CollapsibleCardProps {
   title: string;
@@ -31,6 +32,7 @@ const CollapsibleCard = ({ title, children, id, expanded, onToggle }: Collapsibl
 );
 
 export default function Disclaimer() {
+
   const [expanded, setExpanded] = useState<{ [key: string]: boolean }>({
     scope: false,
     limitations: false,
@@ -108,7 +110,7 @@ export default function Disclaimer() {
           {/* Acknowledgment */}
           <CollapsibleCard title="Your Acknowledgment" id="acknowledgment" expanded={expanded} onToggle={toggleSection}>
             <p className="text-lg text-slate-700 leading-relaxed">
-              By engaging our services, you acknowledge and fully accept that Platinum Finish Group LLC
+              By engaging our services, you acknowledge and fully accept that {config.business.name}
               operates exclusively as a handyman service provider and not as a general contractor. You
               understand the scope of our work, our limitations, and our policies as outlined above.
             </p>

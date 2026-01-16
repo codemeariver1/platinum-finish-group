@@ -24,6 +24,7 @@ const features = [
 ];
 
 export default function About() {
+
   return (
     <section id="about" className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">

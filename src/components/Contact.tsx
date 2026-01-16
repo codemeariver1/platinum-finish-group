@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import config from '../config/env';
 
 export default function Contact() {
-  const CONTACT_EMAIL: string = import.meta.env.VITE_CONTACT_EMAIL || 'example.email.com'
-  const CONTACT_NUMBER: string = import.meta.env.VITE_CONTACT_NUMBER || '123-456-7890'
+
+  const BUSINESS_EMAIL: string = config.business.email;
+  const BUSINESS_NUMBER: string = config.business.phone;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -16,7 +18,8 @@ export default function Contact() {
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
   const handleChange = (
-      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -35,11 +38,11 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          user_id: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+          service_id: config.emailjs.serviceId,
+          template_id: config.emailjs.templateId,
+          user_id: config.emailjs.publicKey,
           template_params: {
-            to_email: CONTACT_EMAIL,
+            to_email: BUSINESS_EMAIL,
             from_name: formData.name,
             from_email: formData.email,
             phone: formData.phone,
@@ -68,11 +71,16 @@ export default function Contact() {
   };
 
   function formatUSPhoneNumber(number: string) {
-    const digits = String(number).replace(/\D/g, '');
+    let digits = String(number).replace(/\D/g, '');
+
+    // Remove leading 1 if it's a US number (11 digits starting with 1)
+    if (digits.length === 11 && digits.startsWith('1')) {
+      digits = digits.slice(1);
+    }
 
     if (digits.length !== 10) {
       throw new Error(
-        `VITE_CONTACT_NUMBER must be 10 digits, got "${number}" (${digits.length} digits after cleaning)`
+        `Phone number must be 10 digits, got "${number}" (${digits.length} digits after cleaning)`
       );
     }
 
@@ -105,8 +113,11 @@ export default function Contact() {
                 <div>
                   <h4 className="font-semibold text-lg mb-1">Phone</h4>
                   <p className="text-slate-300">Call us for immediate assistance</p>
-                  <a href={`tel:+1${CONTACT_NUMBER}`} className="text-red-600 hover:text-red-700 transition-colors">
-                    {formatUSPhoneNumber(CONTACT_NUMBER)}
+                  <a
+                      href={`tel:+1${BUSINESS_NUMBER.replace(/\D/g, '')}`}
+                      className="text-red-600 hover:text-red-700 transition-colors"
+                  >
+                    {formatUSPhoneNumber(BUSINESS_NUMBER)}
                   </a>
                 </div>
               </div>
@@ -119,9 +130,10 @@ export default function Contact() {
                   <h4 className="font-semibold text-lg mb-1">Email</h4>
                   <p className="text-slate-300">Send us a message anytime</p>
                   <a
-                      href={`mailto:${CONTACT_EMAIL}`} className="text-red-600 hover:text-red-700 transition-colors"
+                      href={`mailto:${BUSINESS_EMAIL}`}
+                      className="text-red-600 hover:text-red-700 transition-colors"
                   >
-                    {CONTACT_EMAIL}
+                    {BUSINESS_EMAIL}
                   </a>
                 </div>
               </div>

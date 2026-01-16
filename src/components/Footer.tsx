@@ -1,5 +1,6 @@
 import logoColor from '../assets/logo-color.svg';
 import { Instagram, Facebook } from 'lucide-react';
+import config from '../config/env';
 
 const TikTokIcon = () => (
   <svg className="w-6 h-6" viewBox="0 0 32 32" fill="currentColor">
@@ -28,7 +29,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src={logoColor} alt="Platinum Finish Group LLC" className="h-24 w-auto" />
+              <img src={logoColor} alt={config.business.name} className="h-24 w-auto" />
             </div>
             <p className="text-slate-400 leading-relaxed">
               Your trusted partner for exceptional home renovation and construction services.
@@ -81,7 +82,7 @@ export default function Footer() {
         <div className="border-t border-slate-800 pt-8">
           <div className="flex justify-center gap-6 mb-6">
             <a
-              href="https://instagram.com/platinum_finish_group_llc"
+              href={config.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-red-600 transition-colors"
@@ -90,7 +91,7 @@ export default function Footer() {
               <Instagram className="w-6 h-6" />
             </a>
             <a
-              href="https://www.facebook.com/share/17hpmYfcPL/?mibextid=wwXIfr"
+              href={config.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-red-600 transition-colors"
@@ -99,7 +100,7 @@ export default function Footer() {
               <Facebook className="w-6 h-6" />
             </a>
             <a
-              href="https://tiktok.com/@platinumfinishgro"
+              href={config.social.tiktok}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-red-600 transition-colors"
@@ -109,7 +110,7 @@ export default function Footer() {
             </a>
           </div>
           <div className="text-center text-slate-400">
-            <p>&copy; {currentYear} Platinum Finish Group LLC. All rights reserved.</p>
+            <p>&copy; {currentYear} {config.business.name}. All rights reserved.</p>
           </div>
         </div>
       </div>

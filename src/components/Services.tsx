@@ -55,6 +55,7 @@ const services = [
 ];
 
 export default function Services() {
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
