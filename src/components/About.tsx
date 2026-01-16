@@ -1,4 +1,5 @@
 import { Award, Users, Clock, /*Shield*/ } from 'lucide-react';
+import config from "../config/env.ts";
 
 const features = [
   {
@@ -16,11 +17,6 @@ const features = [
     title: 'On-Time Delivery',
     description: 'We respect your time and complete projects as promised.'
   },
-  // {
-  //   icon: Shield,
-  //   title: 'Licensed & Insured',
-  //   description: 'Fully licensed and insured for your peace of mind.'
-  // }
 ];
 
 export default function About() {
@@ -34,7 +30,7 @@ export default function About() {
               Why Choose Platinum Finish Group?
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              At Platinum Finish Group LLC, we pride ourselves on delivering superior craftsmanship
+              At {config.business.name}, we pride ourselves on delivering superior craftsmanship
               and exceptional customer service. Our team of experienced professionals is committed to
               transforming your space with precision, quality, and attention to detail.
             </p>
