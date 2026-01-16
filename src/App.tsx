@@ -3,6 +3,7 @@ import Services from './components/Services';
 import About from './components/About';
 import ServiceAreas from './components/ServiceAreas';
 import Gallery from './components/Gallery';
+import Disclaimer from './components/Disclaimer';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -14,6 +15,7 @@ function App() {
       <About />
       <ServiceAreas />
       <Gallery />
+      <Disclaimer />
       <Contact />
       <Footer />
     </div>
