@@ -1,55 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const galleryItems = [
-  // Indoor - Bathroom
-  { id: 1, category: 'bathroom', image: '/src/assets/work-gallery/indoor/bathroom/bathroom-1.jpg' },
-  { id: 2, category: 'bathroom', image: '/src/assets/work-gallery/indoor/bathroom/bathroom-2.jpg' },
-  { id: 3, category: 'bathroom', image: '/src/assets/work-gallery/indoor/bathroom/bathroom-3.jpg' },
-  { id: 4, category: 'bathroom', image: '/src/assets/work-gallery/indoor/bathroom/bathroom-4.jpg' },
-  { id: 5, category: 'bathroom', image: '/src/assets/work-gallery/indoor/bathroom/bathroom-5.jpg' },
-  { id: 6, category: 'bathroom', image: '/src/assets/work-gallery/indoor/bathroom/bathroom-6.jpg' },
-  { id: 7, category: 'bathroom', image: '/src/assets/work-gallery/indoor/bathroom/bathroom-7.jpg' },
-
-  // Indoor - Kitchen
-  { id: 8, category: 'kitchen', image: '/src/assets/work-gallery/indoor/kitchen/kitchen-1.jpg' },
-  { id: 9, category: 'kitchen', image: '/src/assets/work-gallery/indoor/kitchen/kitchen-2.jpg' },
-
-  // Indoor - Bedroom
-  { id: 10, category: 'bedroom', image: '/src/assets/work-gallery/indoor/bedroom/pfg-handyman-19-1024x559.jpeg' },
-  { id: 11, category: 'bedroom', image: '/src/assets/work-gallery/indoor/bedroom/pfg-handyman-29-559x1024.jpeg' },
-
-  // Indoor - Living Room
-  {
-    id: 12, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-10-1024x577.jpeg'
-  },
-  {
-    id: 13, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-11-520x1024.jpeg'
-  },
-  {
-    id: 14, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-12-1024x577.jpeg'
-  },
-  {
-    id: 15, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-13-1024x577.jpeg'
-  },
-  {
-    id: 16, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-20-1024x559.jpeg'
-  },
-  {
-    id: 17, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-21-1024x559.jpeg'
-  },
-  {
-    id: 18, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-22-1024x559.jpeg'
-  },
-  {
-    id: 19, category: 'living-room', image: '/src/assets/work-gallery/indoor/living-room/pfg-handyman-30-1024x559.jpeg'
-  },
-
-  // Outdoor
-  { id: 20, category: 'outdoor', image: '/src/assets/work-gallery/outdoor/deck-1.jpg' },
-  { id: 21, category: 'outdoor', image: '/src/assets/work-gallery/outdoor/paint-1.jpg' },
-  { id: 22, category: 'outdoor', image: '/src/assets/work-gallery/outdoor/patio-1.jpg' },
-];
+import { galleryItems } from "../assets/work-gallery";
 
 const categories = [
   { id: 'all', label: 'All Projects' },
