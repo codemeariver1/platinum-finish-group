@@ -10,7 +10,9 @@ interface CollapsibleCardProps {
   onToggle: (id: string) => void;
 }
 
-const CollapsibleCard = ({ title, children, id, expanded, onToggle }: CollapsibleCardProps) => (
+const CollapsibleCard = (
+    { title, children, id, expanded, onToggle }: CollapsibleCardProps
+) => (
   <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
     <button
       onClick={() => onToggle(id)}
@@ -127,4 +129,3 @@ export default function Disclaimer() {
     </section>
   );
 }
-

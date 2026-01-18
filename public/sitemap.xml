@@ -2,44 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>__VITE_SITE_URL__</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://platinumfinishg.com</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>__VITE_SITE_URL__#services</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://platinumfinishg.com#services</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>__VITE_SITE_URL__#gallery</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://platinumfinishg.com#gallery</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>__VITE_SITE_URL__#about</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://platinumfinishg.com#about</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>__VITE_SITE_URL__#contact</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://platinumfinishg.com#contact</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>__VITE_SITE_URL__#service-areas</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://platinumfinishg.com#service-areas</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>__VITE_SITE_URL__#disclaimer</loc>
-    <lastmod>2026-01-16</lastmod>
+    <loc>https://platinumfinishg.com#disclaimer</loc>
+    <lastmod>2026-01-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
